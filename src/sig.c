@@ -1,8 +1,6 @@
-//#include <execinfo.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
-//#include <dlfcn.h>
 #include <stdio.h>
 
 #include "log.h"
