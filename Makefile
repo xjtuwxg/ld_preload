@@ -47,7 +47,13 @@ int3: test/int3.c
 	@echo $@ ready.
 
 run_int3: sig.so int3
-	LD_PRELOAD=./sig.so ./int3 && echo "Exit zero!" || echo "Exit non zero!"
+	LD_PRELOAD=./sig.so ./int3 && echo "=> Exit(0)" || echo "=> Exit(!0)"
+
+disable_aslr:
+	echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+
+enable_aslr:
+	echo 2 | sudo tee /proc/sys/kernel/randomize_va_space
 
 # Clean only Objecst
 clean:

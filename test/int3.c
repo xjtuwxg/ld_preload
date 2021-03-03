@@ -3,9 +3,11 @@
 
 int main()
 {
-	printf("pid: %d\nBefore int3...\n", getpid());
+	printf("pid: %d\nBefore int3 ...\n", getpid());
 	asm("int3");
-	printf("After int3...");
+	asm("int3");
+	asm("int3");
+	printf("After int3 ...\n");
 
 	return 0;
 }
